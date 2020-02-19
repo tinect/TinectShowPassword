@@ -14,8 +14,8 @@ const passwordShower = {
         }
         const me = this;
 
-        if (el.parentElement.style.position !== 'relative') {
-            el.parentElement.style.position = 'relative';
+        if (window.getComputedStyle(el.parentElement).getPropertyValue('position') !== 'relative') {
+            el.parentElement.classList.add('is--relative');
         }
 
         el.classList.add('has--password-shower');
