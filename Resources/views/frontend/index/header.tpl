@@ -1,4 +1,4 @@
-{extends file='parent:frontend/index/index.tpl'}
+{extends file='parent:frontend/index/header.tpl'}
 
 {block name="frontend_index_header_javascript_tracking"}
     {$smarty.block.parent}
