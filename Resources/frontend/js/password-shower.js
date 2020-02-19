@@ -14,6 +14,10 @@ const passwordShower = {
         }
         const me = this;
 
+        if (el.parentElement.style.position !== 'relative') {
+            el.parentElement.style.position = 'relative';
+        }
+
         el.classList.add('has--password-shower');
 
         const passwordShower = document.createElement('div');
