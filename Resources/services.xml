@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="tinect_show_password.view_dir">%tinect_show_password.plugin_dir%/Resources/views</parameter>
+    </parameters>
+
+    <services>
+        <service id="tinect_show_password.subscriber.template"
+                 class="TinectShowPassword\Subscriber\TemplateSubscriber">
+            <argument type="string">%tinect_show_password.view_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+    </services>
+</container>

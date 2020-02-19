@@ -9,21 +9,6 @@ use Shopware\Components\Plugin\Context\UpdateContext;
 
 class TinectShowPassword extends Plugin
 {
-
-    public static function getSubscribedEvents()
-    {
-        return [
-            'Enlight_Controller_Action_PostDispatchSecure_Frontend' => 'onFrontendDispatch'
-        ];
-    }
-
-    public function onFrontendDispatch(\Enlight_Controller_ActionEventArgs $args)
-    {
-        $subject = $args->getSubject();
-
-        $subject->View()->addTemplateDir($this->getPath() . '/Resources/Views/');
-    }
-
     public function activate(ActivateContext $context)
     {
         $context->scheduleClearCache(InstallContext::CACHE_LIST_ALL);
@@ -37,6 +22,4 @@ class TinectShowPassword extends Plugin
     public function install(InstallContext $context)
     {
     }
-
-
 }
