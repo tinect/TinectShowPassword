@@ -1,0 +1,20 @@
+{
+    "name": "tinect/show-password",
+    "keywords": ["shopware"],
+    "description": "add switch to show password as text",
+    "license": "MIT",
+    "type": "shopware-plugin",
+    "authors": [
+        {
+            "name": "tinect",
+            "homepage": "https://github.com/tinect",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "installer-name": "TinectShowPassword"
+    },
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
