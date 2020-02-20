@@ -21,8 +21,8 @@ const passwordShower = {
         el.classList.add('has--password-shower');
 
         const passwordShower = document.createElement('div');
-        passwordShower.classList.add('password-shower', 'is--hidden');
-        passwordShower.textContent = showPasswordTexts.show;
+        passwordShower.classList.add('password-shower', 'is--hidden', 'icon-tsp-eye');
+        passwordShower.setAttribute('title', showPasswordTexts.show);
 
         passwordShower.addEventListener("click", function () {
             me.changePasswordType(el, passwordShower);
@@ -36,6 +36,7 @@ const passwordShower = {
             me.togglePasswordShower(passwordShower, el);
         });
     },
+
     togglePasswordShower: function (passwordShower, passwordField) {
         if (passwordField.value !== '') {
             passwordShower.classList.remove('is--hidden');
@@ -48,10 +49,14 @@ const passwordShower = {
         const currentType = el.getAttribute('type');
         if (currentType === 'password') {
             el.setAttribute('type', 'text');
-            passwordShower.textContent = showPasswordTexts.hide;
+            passwordShower.classList.add('icon-tsp-eyeoff');
+            passwordShower.classList.remove('icon-tsp-eye');
+            passwordShower.setAttribute('title', showPasswordTexts.hide);
         } else {
             el.setAttribute('type', 'password');
-            passwordShower.textContent = showPasswordTexts.show;
+            passwordShower.classList.add('icon-tsp-eye');
+            passwordShower.classList.remove('icon-tsp-eyeoff');
+            passwordShower.setAttribute('title', showPasswordTexts.show);
         }
     },
 
